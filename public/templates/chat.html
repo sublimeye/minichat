@@ -1,0 +1,26 @@
+<section>
+    <h2>Messages:</h2>
+
+    <div style="max-height: 400px; overflow: auto"
+         class="wrapper">
+        <table>
+            <tr ng-repeat="message in messages">
+                <td width="200"><strong>{{message.from}}</strong></td>
+                <td width="400">{{message.text}}</td>
+                <td width="100"><span style="display: block; color: #ccc; text-overflow: ellipsis; overflow: auto; width: 100px; white-space: nowrap">{{message.time | fromNow}}</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <hr/>
+    <form ng-submit="sendMessage()">
+        <input type="text"
+               ng-model="username"/>
+        <input name=""
+               ng-model="message"
+               placeholder="What's on your mind?"/>
+        <button>Send</button>
+    </form>
+</section>
+
